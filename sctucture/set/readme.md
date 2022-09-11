@@ -8,8 +8,9 @@
 ## 1.1. 基于泛型实现的Set
 每次只能添加一种类型，使用方法看container_set_test.go
 
-## 1.2. 基于map实现的Set,但同时支持不同类型，且类型安全
+## 1.2. 基于map实现的Set,但同时支持不同类型，且类型安全,支持的类型是有限制的！
 可以添加不同类型的元素，使用方法看container_set_test.go
+
 
 
 # 注意：
@@ -22,3 +23,7 @@
 > The language spec defines this precisely, but in short, comparable types are
 > boolean, numeric, string, pointer, channel, and interface types, and structs or arrays that contain only those types.
 > Notably absent from the list are slices, maps, and functions; these types cannot be compared using ==, and may not be used as map keys.
+
+
+# Todo
+-[ ] 无限制类型的Set

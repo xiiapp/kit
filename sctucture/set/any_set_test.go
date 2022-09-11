@@ -1,4 +1,4 @@
-package dbs
+package kit
 
 import (
 	"encoding/json"

@@ -1,9 +1,9 @@
-// Package dbs
+// Package kit
 // @Description: 可以添加有限类型的Set接口，支持并发安全
 // 只有支持comparable的类型才可以顺利添加进来。
 // comparable的类型有：boolean, numeric, string, pointer, channel, interface, 以及仅包含这些类型的struct和array 。
 // 使用方法看container_any_set_test.go即可
-package dbs
+package kit
 
 import (
 	"encoding/json"
