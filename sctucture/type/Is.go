@@ -1,8 +1,21 @@
 // Package kit
 // @Description: 对buildin的类型进行判断。包括string,int,bool,struct,bytes,ptr,array,slice,map,chan,func
 //
-// @note：如果自己定义了一个sctruct，名字叫做User。
-//
+// @note：
+//	// 自定义一个类型，可以通过断言来判断是否是这个类型
+//	// type (
+//	// 	StrAnyMap map[string]any
+//	// )
+//	//
+//	// // IsStrAnyMap 是否是指定的Struct
+//	// func IsStrAnyMap(v any) bool {
+//	// 	switch v.(type) {
+//	// 	case StrAnyMap:
+//	// 		return true
+//	// 	}
+//	// 	return false
+//	// }
+
 package kit
 
 import (
@@ -100,6 +113,14 @@ func IsChan(v any) bool {
 // IsFunc 判断类型是否是函数
 func IsFunc(v any) bool {
 	if reflect.TypeOf(v).Kind() == reflect.Func {
+		return true
+	}
+	return false
+}
+
+// IsInterface 判断类型是否是接口
+func IsInterface(v any) bool {
+	if reflect.TypeOf(v).Kind() == reflect.Interface {
 		return true
 	}
 	return false
