@@ -106,6 +106,25 @@ func TestIsBool(t *testing.T) {
 	}
 }
 
+func TestIsPtr(t *testing.T) {
+
+	// 传地址，
+	if !IsPtr(&[]string{"a", "b"}) {
+		t.Error("IsPtr error")
+	}
+
+	p := *(&[]string{"a", "b"})
+	if IsPtr(p) {
+		t.Error("IsPtr error-a")
+	}
+
+	// 直接传类型值，应该返回false
+	if IsPtr([]string{"a", "b"}) {
+		t.Error("IsPtr error-b")
+	}
+
+}
+
 //
 // func TestIsFloat(t *testing.T) {
 // 	if !IsFloat(1.1) {

@@ -24,3 +24,28 @@ func TestIsIntSlice(t *testing.T) {
 	}
 
 }
+
+// 测试转换
+// cmd: go test -v int_slice_test.go int_slice.go -test.run TestToIntSlice
+func TestToIntSlice(t *testing.T) {
+	v := ToIntSlice([]int{1, 2, 3})
+	if !IsIntSlice(v) {
+		t.Error("ToIntSlice error")
+	}
+
+	v2 := ToIntSliceFromPtrAddr(&[]int{1, 2, 3})
+	if !IsIntSlice(v2) {
+		t.Error("ToIntSliceFromPtr error")
+	}
+
+	temp := []int{1, 2, 3}
+	v3 := IntSlice(temp)
+	if !IsIntSlice(&v3) {
+		t.Error("ToIntSliceFromPtr error")
+	}
+
+}
+
+func TestIntSlice(t *testing.T) {
+
+}
